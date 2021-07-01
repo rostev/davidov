@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use DebugBar\DebugBar;
     use Illuminate\Http\Request;
     use Illuminate\View\View;
 
@@ -9,6 +10,7 @@
     {
         public function user($user = 12345): View
         {
+            DebugBar::class.info($user);
             return view('user', compact('user'));
         }
 
